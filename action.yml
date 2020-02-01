@@ -1,0 +1,11 @@
+name: 'Word action'
+description: 'Opens an issue with a word starting with a letter'
+author: 'imjohnbo'
+inputs:
+  letter:
+    required: false
+    description: 'Letter that starts the word you want'
+    default: 'j'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
