@@ -10,7 +10,7 @@
     "build": "ncc build index.js && cp dictionary_alpha_arrays.json dist"
   },
   "dependencies": {
-    "@actions/core": "^1.2.2",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.1.0",
     "@zeit/ncc": "^0.21.0"
   }
