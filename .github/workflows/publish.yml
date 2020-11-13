@@ -16,3 +16,4 @@ jobs:
       - uses: JasonEtco/build-and-tag-action@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          NODE_OPTIONS: --max-old-space-size=8192
