@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "ncc build index.js && cp dictionary_alpha_arrays.json dist",
+    "build": "ncc build index.js --external dictionary_alpha_arrays.json",
     "test": "jest"
   },
   "dependencies": {
