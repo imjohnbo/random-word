@@ -16,19 +16,25 @@ const run = async function() {
         const randomWord = words[Math.floor(Math.random() * words.length)];
         const randomWordDefinition = dictionaryFilteredByLetter[0][randomWord];
 
-        console.log('randomWord: ', randomWord);
-        console.log('randomWordDefinition: ', randomWordDefinition);
-
-        const newIssue = await octokit.issues.create({
+        await octokit.issues.create({
             ...github.context.repo,
             title: `${letter} Word`,
             body: `**Word**: ${randomWord}\n**Definition**: ${randomWordDefinition}`,
             labels: [`${letter}`]
         });
+
+        return {
+            word: randomWord,
+            definition: randomWordDefinition
+        };
     }
     catch (error) {
         console.log(error);
     }
 }
 
-run();
+if (require.main === module) {
+    run();
+}
+
+module.exports = run;
